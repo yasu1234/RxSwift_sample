@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     private let disposeBag = DisposeBag()
+    private let loginViewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +34,17 @@ extension LoginViewController {
     }
     
     private func bindTextFeild() {
-        let userIdValid = userIdTextField.rx.text.orEmpty
-            .map {$0.count > 5}
-            .share(replay: 1)
         
-        let passwordValid = passwordTextField.rx.text.orEmpty
-            .map{$0.count > 5}
-            .share(replay: 1)
+        userIdTextField.rx.text
+            .map{$0 ?? ""}
+            .bind(to: loginViewModel.userId)
+            .disposed(by: disposeBag)
         
-        let isLoginEnable = Observable.combineLatest(userIdValid, passwordValid) {$0 && $1}
-            .share(replay: 1)
+        passwordTextField.rx.text
+            .map{$0 ?? ""}
+            .bind(to: loginViewModel.password)
+            .disposed(by: disposeBag)
         
-        isLoginEnable.bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
+        loginViewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 }

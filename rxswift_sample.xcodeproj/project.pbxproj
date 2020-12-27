@@ -18,6 +18,7 @@
 		D2D8A9A7259776370076DD68 /* rxswift_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D8A9A6259776370076DD68 /* rxswift_sampleUITests.swift */; };
 		D2D8A9C425981ED50076DD68 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D8A9C325981ED50076DD68 /* TimerViewController.swift */; };
 		D2D8A9D5259848960076DD68 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D8A9D4259848960076DD68 /* LoginViewController.swift */; };
+		D2D8A9DB2598917D0076DD68 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D8A9DA2598917D0076DD68 /* LoginViewModel.swift */; };
 		EB4B7E1007D56C0C498C80A2 /* Pods_rxswift_sampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F218FED2020CDCF780E84D66 /* Pods_rxswift_sampleTests.framework */; };
 		FDE68A138BCFC5B5A8EC8AEE /* Pods_rxswift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F334FD72684EC167E1555EA7 /* Pods_rxswift_sample.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		D2D8A9A8259776370076DD68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D8A9C325981ED50076DD68 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		D2D8A9D4259848960076DD68 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D2D8A9DA2598917D0076DD68 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F218FED2020CDCF780E84D66 /* Pods_rxswift_sampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxswift_sampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F334FD72684EC167E1555EA7 /* Pods_rxswift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxswift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				D2D8A992259776370076DD68 /* Info.plist */,
 				D2D8A9C325981ED50076DD68 /* TimerViewController.swift */,
 				D2D8A9D4259848960076DD68 /* LoginViewController.swift */,
+				D2D8A9DA2598917D0076DD68 /* LoginViewModel.swift */,
 			);
 			path = rxswift_sample;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			files = (
 				D2D8A9C425981ED50076DD68 /* TimerViewController.swift in Sources */,
 				D2D8A989259776350076DD68 /* ViewController.swift in Sources */,
+				D2D8A9DB2598917D0076DD68 /* LoginViewModel.swift in Sources */,
 				D2D8A985259776350076DD68 /* AppDelegate.swift in Sources */,
 				D2D8A9D5259848960076DD68 /* LoginViewController.swift in Sources */,
 				D2D8A987259776350076DD68 /* SceneDelegate.swift in Sources */,
