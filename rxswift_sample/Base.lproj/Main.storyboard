@@ -204,6 +204,75 @@
             </objects>
             <point key="canvasLocation" x="1480" y="98"/>
         </scene>
+        <!--Github Search View Controller-->
+        <scene sceneID="fj6-Dh-grh">
+            <objects>
+                <viewController storyboardIdentifier="GithubSearchViewController" id="ovV-uy-rdd" customClass="GithubSearchViewController" customModule="rxswift_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iFX-sD-Dct">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="W3p-ub-uR2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YCL-cj-ygl"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qMt-Re-lQ2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GithubRepositoryItemCell" rowHeight="60" id="Quv-ym-450" customClass="RepositortCell" customModule="rxswift_sample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Quv-ym-450" id="gDP-Mk-KO9" customClass="RepositortCell" customModule="rxswift_sample" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-al-ePq">
+                                                    <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="i4i-zW-npc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BNO-al-ePq" firstAttribute="leading" secondItem="gDP-Mk-KO9" secondAttribute="leading" constant="8" id="BQG-sl-1x6"/>
+                                                <constraint firstItem="BNO-al-ePq" firstAttribute="top" secondItem="gDP-Mk-KO9" secondAttribute="top" constant="8" id="QHB-UJ-kge"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="BNO-al-ePq" id="qdD-ws-vcM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bHc-cg-6pw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W3p-ub-uR2" firstAttribute="leading" secondItem="bHc-cg-6pw" secondAttribute="leading" id="F5M-T7-sgT"/>
+                            <constraint firstItem="bHc-cg-6pw" firstAttribute="bottom" secondItem="qMt-Re-lQ2" secondAttribute="bottom" id="etJ-re-nth"/>
+                            <constraint firstItem="qMt-Re-lQ2" firstAttribute="top" secondItem="W3p-ub-uR2" secondAttribute="bottom" id="h8Q-7D-SaW"/>
+                            <constraint firstItem="W3p-ub-uR2" firstAttribute="trailing" secondItem="bHc-cg-6pw" secondAttribute="trailing" id="h9B-v8-1ch"/>
+                            <constraint firstItem="qMt-Re-lQ2" firstAttribute="leading" secondItem="bHc-cg-6pw" secondAttribute="leading" id="n6y-mj-9f0"/>
+                            <constraint firstItem="W3p-ub-uR2" firstAttribute="top" secondItem="bHc-cg-6pw" secondAttribute="top" id="pbj-6A-93R"/>
+                            <constraint firstItem="bHc-cg-6pw" firstAttribute="trailing" secondItem="qMt-Re-lQ2" secondAttribute="trailing" id="xA8-wg-lsi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="githubTableView" destination="qMt-Re-lQ2" id="svq-hM-QZR"/>
+                        <outlet property="searchBar" destination="W3p-ub-uR2" id="UE0-Td-pGF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8q-qL-UbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2150.7246376811595" y="94.419642857142847"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

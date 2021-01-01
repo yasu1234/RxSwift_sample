@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     private func bindButton() {
         loginButton.rx.tap.subscribe({ _ in
-            print("OK")
+            self.presentGithubSearchView()
         }).disposed(by: disposeBag)
     }
     
@@ -46,5 +46,14 @@ extension LoginViewController {
             .disposed(by: disposeBag)
         
         loginViewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
+    }
+}
+
+extension LoginViewController {
+    
+    private func presentGithubSearchView() {
+        let githubSearchViewController = self.storyboard?.instantiateViewController(withIdentifier: "GithubSearchViewController") as! GithubSearchViewController
+        githubSearchViewController.modalPresentationStyle = .fullScreen
+        present(githubSearchViewController, animated: true, completion: nil)
     }
 }
