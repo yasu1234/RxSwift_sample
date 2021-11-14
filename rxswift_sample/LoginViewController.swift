@@ -10,13 +10,12 @@ import RxSwift
 import RxCocoa
 
 class LoginViewController: UIViewController {
-    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var userIdTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     private let disposeBag = DisposeBag()
-    private let loginViewModel = LoginViewModel()
+    private let viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +27,42 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func bindButton() {
-        loginButton.rx.tap.subscribe({ _ in
-            self.presentGithubSearchView()
-        }).disposed(by: disposeBag)
+        loginButton.rx.tap
+            .bind(to: viewModel.inputs.isLoginButtonTaped)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.isNextViewPresent
+            .asObservable()
+            .subscribe(onNext: { [weak self] isPresent in
+                if isPresent {
+                    self?.presentGithubSearchView()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.isLoginButtonEnable
+            .drive(onNext: { [weak self] isEnabled in
+                if isEnabled {
+                    self?.loginButton.isEnabled = true
+                    self?.loginButton.setTitle("ログイン可能", for: UIControl.State.normal)
+                } else {
+                    self?.loginButton.isEnabled = false
+                    self?.loginButton.setTitle("ログインできません", for: UIControl.State.normal)
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindTextFeild() {
-        
         userIdTextField.rx.text
             .map{$0 ?? ""}
-            .bind(to: loginViewModel.userId)
+            .bind(to: viewModel.userId)
             .disposed(by: disposeBag)
         
         passwordTextField.rx.text
             .map{$0 ?? ""}
-            .bind(to: loginViewModel.password)
+            .bind(to: viewModel.password)
             .disposed(by: disposeBag)
-        
-        loginViewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 }
 
