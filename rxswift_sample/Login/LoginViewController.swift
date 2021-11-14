@@ -67,7 +67,6 @@ extension LoginViewController {
 }
 
 extension LoginViewController {
-    
     private func presentGithubSearchView() {
         let githubSearchViewController = self.storyboard?.instantiateViewController(withIdentifier: "GithubSearchViewController") as! GithubSearchViewController
         githubSearchViewController.modalPresentationStyle = .fullScreen
