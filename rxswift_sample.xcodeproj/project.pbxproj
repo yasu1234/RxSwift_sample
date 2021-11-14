@@ -130,6 +130,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D2A7AF4027414D3D0092893E /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				D2D8A9C325981ED50076DD68 /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		D2A7AF4127414D560092893E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D2D8A9D4259848960076DD68 /* LoginViewController.swift */,
+				D2D8A9DA2598917D0076DD68 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D2A7AF4227414F890092893E /* GithubSearch */ = {
+			isa = PBXGroup;
+			children = (
+				D2D8A9E1259CFE760076DD68 /* GithubSearchViewController.swift */,
+				D2D8A9E6259D00D50076DD68 /* GithubSearchViewModel.swift */,
+				D2D8A9F0259D3FDD0076DD68 /* APIManager.swift */,
+				D2D8A9EB259D3F440076DD68 /* Repository.swift */,
+				D2D8A9F7259D4E0B0076DD68 /* RepositoryCell.swift */,
+			);
+			path = GithubSearch;
+			sourceTree = "<group>";
+		};
 		D2D8A978259776350076DD68 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +184,9 @@
 		D2D8A983259776350076DD68 /* rxswift_sample */ = {
 			isa = PBXGroup;
 			children = (
+				D2A7AF4227414F890092893E /* GithubSearch */,
+				D2A7AF4127414D560092893E /* Login */,
+				D2A7AF4027414D3D0092893E /* Timer */,
 				D2D8A984259776350076DD68 /* AppDelegate.swift */,
 				D2D8A986259776350076DD68 /* SceneDelegate.swift */,
 				D2D8A988259776350076DD68 /* ViewController.swift */,
@@ -162,14 +194,6 @@
 				D2D8A98D259776370076DD68 /* Assets.xcassets */,
 				D2D8A98F259776370076DD68 /* LaunchScreen.storyboard */,
 				D2D8A992259776370076DD68 /* Info.plist */,
-				D2D8A9C325981ED50076DD68 /* TimerViewController.swift */,
-				D2D8A9D4259848960076DD68 /* LoginViewController.swift */,
-				D2D8A9DA2598917D0076DD68 /* LoginViewModel.swift */,
-				D2D8A9E1259CFE760076DD68 /* GithubSearchViewController.swift */,
-				D2D8A9E6259D00D50076DD68 /* GithubSearchViewModel.swift */,
-				D2D8A9EB259D3F440076DD68 /* Repository.swift */,
-				D2D8A9F0259D3FDD0076DD68 /* APIManager.swift */,
-				D2D8A9F7259D4E0B0076DD68 /* RepositoryCell.swift */,
 			);
 			path = rxswift_sample;
 			sourceTree = "<group>";

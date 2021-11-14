@@ -50,8 +50,7 @@ extension ViewController {
     
     
     private func bindLabel() {
-        // 'asObservable()' means convert to Observable
-        count.asObservable().subscribe(onNext: { [weak self] count in
+        count.subscribe(onNext: { [weak self] count in
             self?.countLabel.text = String(count)
         }).disposed(by: disposeBag)
     }
@@ -60,11 +59,13 @@ extension ViewController {
 extension ViewController {
     
     private func increment() {
-        // 'accept' means next event
+        // 'accept' is action next event
+        // if current value is 0, count is 1 when tap once
         count.accept(count.value + 1)
     }
     
     private func decrement() {
+        // if current value is 1, count is 0 when tap once
         count.accept(count.value - 1)
     }
 }
